@@ -10,12 +10,13 @@
 \pagestyle{empty}
 
 \usepackage{xepersian}
-\settextfont{IRNazanin}[
+\settextfont{Vazirmatn}[
+  Path=fonts/,
   Extension=.ttf,
-  BoldFont=*Bold,
-  ItalicFont=*Italic,
-  BoldItalicFont=*Bold,
-  Path=fonts/
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Light,
+  BoldItalicFont=*-SemiBold
 ]
 
 \begin{document}
@@ -24,7 +25,7 @@
   \includegraphics[width=0.8\textwidth]{assets/logo.png}
 \end{minipage}
 \hfill
-\begin{minipage}{0.8\textwidth}
+\begin{minipage}{0.9\textwidth}
   \raggedleft
   {\Huge\textbf{نشست
   ${EVENT_NUMBER}
@@ -33,8 +34,7 @@
   \large{شرکت در رویداد برای عموم، آزاد و رایگان می‌باشد}
 \end{minipage}
 
-\vspace{1in}
-
+\vspace{1.5cm}
 
 \begin{minipage}[t]{0.5\textwidth}
 	\huge
@@ -56,16 +56,16 @@
 \vspace{\fill}
 \end{minipage}
 
-\vspace{1in}
+\vspace{1.5cm}
 
-\begin{minipage}[t]{0.47\textwidth}
+\begin{minipage}[t]{0.45\textwidth}
 \centering
 \vspace{\fill}
 \includegraphics[width=0.8\textwidth]{assets/tux.png}
 \vspace{\fill}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[t]{0.55\textwidth}
 	\huge
 	\raggedleft
 
