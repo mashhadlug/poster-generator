@@ -37,7 +37,7 @@
 \vspace{1.5cm}
 
 \begin{minipage}[t]{0.5\textwidth}
-	\huge
+	\LARGE
 	\raggedleft
 
 	\textbf{${LECTURER_FIRST_FULLNAME}}:\\ ${LECTURER_FIRST_TITLE}
@@ -56,29 +56,29 @@
 \vspace{\fill}
 \end{minipage}
 
-\vspace{1.5cm}
+\vspace{1in}
 
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
 \centering
 \vspace{\fill}
 \includegraphics[width=0.8\textwidth]{assets/tux.png}
 \vspace{\fill}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.55\textwidth}
-	\huge
+\begin{minipage}[t]{0.5\textwidth}
+	\LARGE
 	\raggedleft
 
-	\textbf{تاریخ:} ${EVENT_DATE}
+	\textbf{تاریخ:}\\ ${EVENT_DATE}
 	\vspace{0.3cm}
 
-	\textbf{ساعت:} ${EVENT_TIME_RANGE}
+	\textbf{ساعت:}\\ ${EVENT_TIME_RANGE}
 	\vspace{0.3cm}
 
-	\textbf{حامی این جلسه:} ${EVENT_SPONSOR}
+	\textbf{حامی این جلسه:}\\ ${EVENT_SPONSOR}
 	\vspace{0.3cm}
 
-	\textbf{آدرس:} ${EVENT_LOCATION_ADDRESS}
+	\textbf{آدرس:}\\ ${EVENT_LOCATION_ADDRESS}
 	\vspace{0.3cm}
 
 	\includegraphics[width=0.4\textwidth]{assets/qrcode.png}
