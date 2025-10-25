@@ -10,12 +10,13 @@
 \pagestyle{empty}
 
 \usepackage{xepersian}
-\settextfont{IRNazanin}[
+\settextfont{Vazirmatn}[
+  Path=fonts/Vazirmatn/,
   Extension=.ttf,
-  BoldFont=*Bold,
-  ItalicFont=*Italic,
-  BoldItalicFont=*Bold,
-  Path=fonts/
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Light,
+  BoldItalicFont=*-SemiBold
 ]
 
 \begin{document}
