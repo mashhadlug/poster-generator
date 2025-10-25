@@ -1,3 +1,4 @@
+SHELL := bash
 VIEWER = evince
 EVENT_NUMBER =
 
