@@ -7,7 +7,7 @@ all: build build-png textual-banner
 out:
 	mkdir out
 
-build: out out/session.pdf
+build: cleanup out out/session.pdf
 
 view:
 	${VIEWER} out/*.pdf
