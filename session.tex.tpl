@@ -56,7 +56,7 @@
 \vspace{\fill}
 \end{minipage}
 
-\vspace{1in}
+\vspace{1.5cm}
 
 \begin{minipage}[t]{0.5\textwidth}
 \centering
