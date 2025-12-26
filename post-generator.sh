@@ -2,30 +2,24 @@
 
 set -euo pipefail
 
-EVENT_TYPE="tech-event"
 SPECIFIC_EVENT=""
 
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --tech-event|--book-review)
-            EVENT_TYPE="$1"
-            shift
-            ;;
         -h|--help)
             cat << EOF
-Usage: $0 [OPTIONS] [EVENT_ID|FILE]
+Usage: $0 [EVENT_ID|FILE]
 
 Generate event posters from template files.
 
-Options:
-    --tech-event, --book-review   Specify event type
-    EVENT_ID                Numeric ID of event in events/ directory
-    FILE                    Path to specific .vars file
+Arguments:
+    EVENT_ID      Numeric ID of event in events/ directory
+    FILE          Path to specific .vars file
 
 Examples:
-    $0 15                   # Build event 15 from events/15.vars
-    $0 --bookreview event.vars # Build with specific type
-    $0                      # Build all events
+    $0 15         # Build event 15 from events/15.vars
+    $0 event.vars # Build with specific .vars file
+    $0            # Build all events
 
 EOF
             exit 0
@@ -48,20 +42,25 @@ build_poster() {
     EVENT_FILE=$1
     NUM=$(basename "$EVENT_FILE" .vars)
 
-    echo "Building poster for event $NUM with type: ${EVENT_TYPE:---default}"
-
+    EVENT_TYPE="tech-event"
     set -a
     source "${EVENT_FILE}"
     set +a
-    
-    if [[ -n "$EVENT_TYPE" ]]; then
-        export EVENT_TYPE="${EVENT_TYPE#--}"
+
+    if [[ ! -f "${EVENT_TYPE}.tex.tpl" ]]; then
+        echo -e "\033[31mERROR: Template file ${EVENT_TYPE}.tex.tpl not found\033[0m"
+        exit 1
+    fi
+
+    if [[ ! -f "${EVENT_TYPE}.txt.tpl" ]]; then
+        echo -e "\033[31mERROR: Template file ${EVENT_TYPE}.txt.tpl not found\033[0m"
+        exit 1
     fi
 
     envsubst < ${EVENT_TYPE}.tex.tpl > out/${EVENT_TYPE}.tex
 
     if [[ -z "${EVENT_LOCATION_URL:-}" ]]; then
-        echo -e "\033[31mEVENT_LOCATION_URL variable is empty in $EVENT_FILE."\
+        echo -e "\033[31mERROR: EVENT_LOCATION_URL variable is empty in $EVENT_FILE."\
         "This field is required for qrcode generator.\033[0m"
         exit 1
     fi
